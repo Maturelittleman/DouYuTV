@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2725AC2E1DFD4FA200681145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC2D1DFD4FA200681145 /* AppDelegate.swift */; };
-		2725AC301DFD4FA200681145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC2F1DFD4FA200681145 /* ViewController.swift */; };
 		2725AC331DFD4FA200681145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725AC311DFD4FA200681145 /* Main.storyboard */; };
 		2725AC351DFD4FA200681145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725AC341DFD4FA200681145 /* Assets.xcassets */; };
-		2725AC381DFD4FA200681145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2725AC361DFD4FA200681145 /* LaunchScreen.storyboard */; };
 		2725AC431DFD4FA200681145 /* DouYuZhiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC421DFD4FA200681145 /* DouYuZhiBoTests.swift */; };
 		2725AC4E1DFD4FA200681145 /* DouYuZhiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC4D1DFD4FA200681145 /* DouYuZhiBoUITests.swift */; };
 /* End PBXBuildFile section */
@@ -36,10 +34,8 @@
 /* Begin PBXFileReference section */
 		2725AC2A1DFD4FA200681145 /* DouYuZhiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuZhiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725AC2D1DFD4FA200681145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2725AC2F1DFD4FA200681145 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2725AC321DFD4FA200681145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2725AC341DFD4FA200681145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2725AC371DFD4FA200681145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2725AC391DFD4FA200681145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2725AC3E1DFD4FA200681145 /* DouYuZhiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouYuZhiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725AC421DFD4FA200681145 /* DouYuZhiBoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouYuZhiBoTests.swift; sourceTree = "<group>"; };
@@ -98,10 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				2725AC2D1DFD4FA200681145 /* AppDelegate.swift */,
-				2725AC2F1DFD4FA200681145 /* ViewController.swift */,
+				2772D7031DFF975F00FB329E /* Classes */,
+				2772D7091DFF975F00FB329E /* Other */,
 				2725AC311DFD4FA200681145 /* Main.storyboard */,
 				2725AC341DFD4FA200681145 /* Assets.xcassets */,
-				2725AC361DFD4FA200681145 /* LaunchScreen.storyboard */,
 				2725AC391DFD4FA200681145 /* Info.plist */,
 			);
 			path = DouYuZhiBo;
@@ -123,6 +119,84 @@
 				2725AC4F1DFD4FA200681145 /* Info.plist */,
 			);
 			path = DouYuZhiBoUITests;
+			sourceTree = "<group>";
+		};
+		2772D7031DFF975F00FB329E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2772D7071DFF975F00FB329E /* Main */,
+				2772D7051DFF975F00FB329E /* Home */,
+				2772D7061DFF975F00FB329E /* Live */,
+				2772D7041DFF975F00FB329E /* Follow */,
+				2772D7081DFF975F00FB329E /* Me */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2772D7041DFF975F00FB329E /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		2772D7051DFF975F00FB329E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2772D7061DFF975F00FB329E /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		2772D7071DFF975F00FB329E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2772D7081DFF975F00FB329E /* Me */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		2772D7091DFF975F00FB329E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2772D70A1DFF975F00FB329E /* Category */,
+				2772D70B1DFF975F00FB329E /* Headers */,
+				2772D70C1DFF975F00FB329E /* NetWork */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2772D70A1DFF975F00FB329E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2772D70B1DFF975F00FB329E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		2772D70C1DFF975F00FB329E /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +267,7 @@
 				TargetAttributes = {
 					2725AC291DFD4FA200681145 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 5J4983VAR8;
 						ProvisioningStyle = Automatic;
 					};
 					2725AC3D1DFD4FA200681145 = {
@@ -232,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2725AC381DFD4FA200681145 /* LaunchScreen.storyboard in Resources */,
 				2725AC351DFD4FA200681145 /* Assets.xcassets in Resources */,
 				2725AC331DFD4FA200681145 /* Main.storyboard in Resources */,
 			);
@@ -259,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2725AC301DFD4FA200681145 /* ViewController.swift in Sources */,
 				2725AC2E1DFD4FA200681145 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +375,6 @@
 				2725AC321DFD4FA200681145 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2725AC361DFD4FA200681145 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2725AC371DFD4FA200681145 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,11 +477,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 5J4983VAR8;
 				INFOPLIST_FILE = DouYuZhiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zhong.DouYuZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,11 +493,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 5J4983VAR8;
 				INFOPLIST_FILE = DouYuZhiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zhong.DouYuZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -505,6 +578,7 @@
 				2725AC541DFD4FA200681145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2725AC551DFD4FA200681145 /* Build configuration list for PBXNativeTarget "DouYuZhiBoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +587,7 @@
 				2725AC571DFD4FA200681145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2725AC581DFD4FA200681145 /* Build configuration list for PBXNativeTarget "DouYuZhiBoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +596,7 @@
 				2725AC5A1DFD4FA200681145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
