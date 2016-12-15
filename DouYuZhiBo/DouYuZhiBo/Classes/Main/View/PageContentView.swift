@@ -17,9 +17,9 @@ class PageContentView: UIView {
     fileprivate weak var parentViewController: UIViewController?
     
     // MARK:- 懒加载属性
-    fileprivate lazy var collectionView: UICollectionView = {
+    fileprivate lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size //   内容尺寸
+        layout.itemSize = (self?.bounds.size)! //   内容尺寸
         layout.minimumLineSpacing = 0 //    行间距
         layout.minimumInteritemSpacing = 0 //   列间距
         layout.scrollDirection = .horizontal //     滚动方向 (横向)
@@ -85,7 +85,14 @@ extension PageContentView: UICollectionViewDataSource {
         cell.contentView.addSubview(childVC.view)
         return cell
     }
-
 }
 
-
+// MARK:- 对外暴露的方法
+extension PageContentView {
+    func setCurrentIndex(currentIndex: Int) {
+        
+        let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+        
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+    }
+}
