@@ -8,8 +8,9 @@
 
 import UIKit
 
-let kStatusBar: CGFloat = 20
 
+let kTabbarH : CGFloat = 44
+let kStatusBar: CGFloat = 20
 let kNavigation: CGFloat = 44
 
 let kScreenW: CGFloat = UIScreen.main.bounds.width

@@ -80,7 +80,6 @@ extension PageTitleView {
             label.textAlignment = .center
             
             let labelX: CGFloat = labelW * CGFloat(index)
-
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
             
             scrollView.addSubview(label)
@@ -98,12 +97,8 @@ extension PageTitleView {
         
         //  添加标题线
         addSubview(titleLine)
-        
         guard let firstLabel = titleLabels.first else {return}
-        
         firstLabel.textColor = UIColor.orange
-        
         titleLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - kTitleLine, width: firstLabel.frame.size.width, height: kTitleLine)
-        
     }
 }
