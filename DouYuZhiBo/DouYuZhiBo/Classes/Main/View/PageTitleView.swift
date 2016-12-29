@@ -118,12 +118,13 @@ extension PageTitleView {
 extension PageTitleView {
     @objc fileprivate func titleLabelClick(tapG: UITapGestureRecognizer) {
         
-        //  设置点击按钮的字体
-        guard let clickLabel = tapG.view as? UILabel else {return}
-        clickLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         //  设置老按钮点击的字体
         let oldLabel = titleLabels[currentIndex]
         oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
+        //  设置点击按钮的字体
+        guard let clickLabel = tapG.view as? UILabel else {return}
+        clickLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
+
         //  保存点击的按钮
         currentIndex = clickLabel.tag
         
@@ -143,6 +144,9 @@ extension PageTitleView {
  
     func setCurrentTitleLabel(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         
+        //保存当前点击的Label
+        currentIndex = targetIndex
+        
         // 取出需要改变的Label
         let sourceLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]
@@ -153,15 +157,15 @@ extension PageTitleView {
         
         //  取出颜色变化的范围
         let colorChange = (kSelectColor.0 - kNormalColor.0,kSelectColor.1 - kNormalColor.1,kSelectColor.2 - kNormalColor.2)
+        
         //  改变sourceLabel
         sourceLabel.textColor = UIColor(r: kSelectColor.0 - colorChange.0 * progress, g:kSelectColor.1 - colorChange.1 * progress , b: kSelectColor.2 - colorChange.2 * progress)
+
         //  改变targetLabel
         targetLabel.textColor = UIColor(r: kNormalColor.0 + colorChange.0 * progress, g: kNormalColor.1 + colorChange.1 * progress, b: kNormalColor.2 + colorChange.2 * progress)
         
-        //保存当前点击的Label
-        currentIndex = targetIndex
+        print("progress\(progress), sourceIndex: \(sourceIndex), targetIndex: \(targetIndex) \n ------")
     }
-    
 }
 
 

@@ -131,10 +131,14 @@ extension PageContentView: UICollectionViewDelegate {
                 targetIndex = childVCs.count - 1
             }
             //  完全划过去后
-//            if currentOffsetX - startOffsetX == scrollViewW {
-//                progress = 1
-//                targetIndex = sourceIndex
-//            }
+            if currentOffsetX - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+            //  当前位置 等于 子控制器最大时
+            if sourceIndex == childVCs.count - 1 {
+                progress = 1
+            }
         }else {     //  右划
             progress = 1 - (currentOffsetX / scrollViewW  - floor(currentOffsetX / scrollViewW))
             
