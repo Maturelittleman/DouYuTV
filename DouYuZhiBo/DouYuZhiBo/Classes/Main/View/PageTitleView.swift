@@ -10,6 +10,10 @@ import UIKit
 
 private let kTitleLine: CGFloat = 2
 
+private let kNormalColor: (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
+private let kSelectColor: (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
+
+//  定义协议
 protocol PageTitleViewDelegate: class {
     func pageTitleView(titleView: PageTitleView, selectedIndex index: Int)
 }
@@ -77,7 +81,7 @@ extension PageTitleView {
             let label = UILabel()
             label.text = title
             label.tag = index
-            label.textColor = UIColor.darkGray
+            label.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
             label.font = UIFont.systemFont(ofSize: 16.0)
             label.textAlignment = .center //    居中显示
             //  设置label的Frame
@@ -105,7 +109,7 @@ extension PageTitleView {
         //  添加标题线
         addSubview(scrollLine)
         guard let firstLabel = titleLabels.first else {return}
-        firstLabel.textColor = UIColor.orange
+        firstLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - kTitleLine, width: firstLabel.frame.size.width, height: kTitleLine)
     }
 }
@@ -116,10 +120,10 @@ extension PageTitleView {
         
         //  设置点击按钮的字体
         guard let clickLabel = tapG.view as? UILabel else {return}
-        clickLabel.textColor = UIColor.orange
+        clickLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         //  设置老按钮点击的字体
         let oldLabel = titleLabels[currentIndex]
-        oldLabel.textColor = UIColor.darkGray
+        oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
         //  保存点击的按钮
         currentIndex = clickLabel.tag
         
@@ -132,5 +136,33 @@ extension PageTitleView {
         //  代理方法:将点击事件传出去
         delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
     }
+}
+
+// MARK:- 对外暴露的方法
+extension PageTitleView {
+ 
+    func setCurrentTitleLabel(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        
+        // 取出需要改变的Label
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        //  处理标题线的逻辑
+        let moveTotalX = sourceLabel.frame.origin.x - targetLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x - moveX
+        
+        //  取出颜色变化的范围
+        let colorChange = (kSelectColor.0 - kNormalColor.0,kSelectColor.1 - kNormalColor.1,kSelectColor.2 - kNormalColor.2)
+        //  改变sourceLabel
+        sourceLabel.textColor = UIColor(r: kSelectColor.0 - colorChange.0 * progress, g:kSelectColor.1 - colorChange.1 * progress , b: kSelectColor.2 - colorChange.2 * progress)
+        //  改变targetLabel
+        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorChange.0 * progress, g: kNormalColor.1 + colorChange.1 * progress, b: kNormalColor.2 + colorChange.2 * progress)
+        
+        //保存当前点击的Label
+        currentIndex = targetIndex
+    }
     
 }
+
+
+
