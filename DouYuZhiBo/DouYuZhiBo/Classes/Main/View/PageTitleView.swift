@@ -163,8 +163,6 @@ extension PageTitleView {
 
         //  改变targetLabel
         targetLabel.textColor = UIColor(r: kNormalColor.0 + colorChange.0 * progress, g: kNormalColor.1 + colorChange.1 * progress, b: kNormalColor.2 + colorChange.2 * progress)
-        
-        print("progress\(progress), sourceIndex: \(sourceIndex), targetIndex: \(targetIndex) \n ------")
     }
 }
 

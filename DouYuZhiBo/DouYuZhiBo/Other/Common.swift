@@ -11,7 +11,7 @@ import UIKit
 
 let kTabbarH : CGFloat = 44
 let kStatusBar: CGFloat = 20
-let kNavigation: CGFloat = 44
+let kNavigationH: CGFloat = 44
 
 let kScreenW: CGFloat = UIScreen.main.bounds.width
 let kScreenH: CGFloat = UIScreen.main.bounds.height

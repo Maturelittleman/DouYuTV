@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     
     // MARK:- 懒加载属性
     fileprivate lazy var pageTitleView: PageTitleView = { [weak self] in
-        let titleFrame = CGRect(x: 0, y: kStatusBar + kNavigation, width: kScreenW, height: kTitleViewH)
+        let titleFrame = CGRect(x: 0, y: kStatusBar + kNavigationH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
@@ -23,13 +23,14 @@ class HomeViewController: UIViewController {
     }()
     
     fileprivate lazy var pageContentView: PageContentView = { [weak self] in
-        let contentH = kScreenH - kStatusBar - kNavigation - kTitleViewH
-        let contentFrame = CGRect(x: 0, y: kStatusBar + kNavigation + kTitleViewH, width: kScreenW, height: contentH)
+        let contentH = kScreenH - kStatusBar - kNavigationH - kTitleViewH - kTabbarH
+        let contentFrame = CGRect(x: 0, y: kStatusBar + kNavigationH + kTitleViewH, width: kScreenW, height: contentH)
         
         var childVCs = [UIViewController]()
         
+        childVCs.append(RecommendViewController())
         //  for循环创建子控制器
-        for _ in 0..<4 {
+        for _ in 0..<3 {
             let VC = UIViewController()
             VC.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             
