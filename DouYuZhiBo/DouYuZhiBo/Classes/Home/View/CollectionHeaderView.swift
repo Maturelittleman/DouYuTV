@@ -10,6 +10,18 @@ import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
     
+    fileprivate var imageView = UIImageView()
+    fileprivate var titleLabel = UILabel()
+    
+    var anchorGroup: AnchorGroup? {
+        didSet {
+
+            titleLabel.text = anchorGroup?.tag_name
+            print("\(anchorGroup?.icon_name)")
+            imageView.image = UIImage(named: anchorGroup?.icon_name ?? "home_header_normal")
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -18,7 +30,6 @@ class CollectionHeaderView: UICollectionReusableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension CollectionHeaderView {
@@ -37,9 +48,9 @@ extension CollectionHeaderView {
         }
         
         //  图标
-        let imageView = UIImageView(image: UIImage(named: "home_header_hot"))
+        let imageView = UIImageView(image: UIImage(named: "home_header_normal"))
         self.addSubview(imageView)
-        
+        self.imageView = imageView
         imageView.snp.makeConstraints { (make) in
             make.height.equalTo(18)
             make.width.equalTo(18)
@@ -53,7 +64,7 @@ extension CollectionHeaderView {
         titleLabel.text = "颜值"
         titleLabel.font = UIFont.systemFont(ofSize: 16)
         titleLabel.textColor = UIColor.black
-        
+        self.titleLabel = titleLabel
         titleLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(imageView.snp.centerY)
             make.left.equalTo(imageView.snp.right).offset(5)
@@ -66,7 +77,6 @@ extension CollectionHeaderView {
         btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
 
-        
         btn.snp.makeConstraints { (make) in
             make.centerY.equalTo(imageView.snp.centerY)
             make.right.equalTo(-10)

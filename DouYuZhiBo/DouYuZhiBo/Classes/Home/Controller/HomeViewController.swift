@@ -63,6 +63,7 @@ extension HomeViewController {
         
         //  添加内容控制器
         view.addSubview(pageContentView)
+        
     }
     
     // MARK:- 添加导航栏
