@@ -10,6 +10,8 @@ import UIKit
 
 class RecommendViewModel {
     
+    lazy var cycleArray: [CycleModel] = [CycleModel]()
+    
     lazy var anchorGroup: [AnchorGroup] = [AnchorGroup]()
     
     lazy var bigDataArray: AnchorGroup = AnchorGroup()
@@ -21,6 +23,7 @@ class RecommendViewModel {
 // MARK:- 发送网络请求
 extension RecommendViewModel {
     
+    //获取推荐数据
     func requestData(_ finishCallBack: @escaping ()-> ()) {
         
         let dGroup = DispatchGroup()
@@ -82,6 +85,23 @@ extension RecommendViewModel {
         dGroup.notify(queue: DispatchQueue.main) {
             self.anchorGroup.insert(self.prettyDataArray, at: 0)
             self.anchorGroup.insert(self.bigDataArray, at: 0)
+            
+            finishCallBack()
+        }
+    }
+    
+    //  获取 轮播图数据
+    func requestCycleData (_ finishCallBack: @escaping () -> ()) {
+        
+        NetWorkingTool.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/slide/6", parameters: ["version" : "2.421"]) { (result) in
+            
+            guard let resultData = result as? [String: NSObject] else { return }
+            guard let dataArray = resultData["data"] as? [[String: NSObject]] else { return }
+            
+            for dict in dataArray {
+                let cycle = CycleModel(dict: dict)
+                self.cycleArray.append(cycle)
+            }
             
             finishCallBack()
         }
