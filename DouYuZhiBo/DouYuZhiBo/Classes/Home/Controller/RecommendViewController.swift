@@ -16,6 +16,7 @@ fileprivate let kNormalItemW = (kScreenW - 3*kItemMargin) / 2  //  item宽度
 fileprivate let kNormalItemH = kNormalItemW * 3 / 4  //  普通Item高度
 fileprivate let kPrettyItemH = kNormalItemW * 4 / 3  //  颜值Item高度
 fileprivate let kCycleViewH = kScreenW * 3 / 8  //  轮播器高度
+fileprivate let kGameViewH : CGFloat = 90   //  游戏栏高度
 
 fileprivate let kNormalCellID = "kNormalCellID"     //  普通CellID
 fileprivate let kPrettyFaceCellID = "kPrettyFaceCellID"     //  颜值CellID
@@ -26,9 +27,15 @@ class RecommendViewController: UIViewController {
     fileprivate lazy var recommendVM: RecommendViewModel = RecommendViewModel()
     
     fileprivate lazy var cycleView: RecommendCycleView = {
-        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH))
+        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -kCycleViewH - kGameViewH, width: kScreenW, height: kCycleViewH))
         
         return cycleView
+    }()
+    
+    fileprivate lazy var gameView: RecommendGameView = {
+       let gameView = RecommendGameView(frame: CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH))
+        
+        return gameView
     }()
     
     fileprivate lazy var collectionView: UICollectionView = { [unowned self] in
@@ -70,7 +77,9 @@ extension RecommendViewController {
         
         collectionView.addSubview(cycleView)
         
-        collectionView.contentInset = UIEdgeInsetsMake( kCycleViewH, 0, 0, 0)
+        collectionView.addSubview(gameView)
+        
+        collectionView.contentInset = UIEdgeInsetsMake( kCycleViewH + kGameViewH, 0, 0, 0)
     }
 }
 
@@ -82,6 +91,18 @@ extension RecommendViewController {
         //  获取推荐数据
         recommendVM.requestData {
             self.collectionView.reloadData()
+            
+            var groups = self.recommendVM.anchorGroup
+            
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            let moreGroup =  AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            
+            self.gameView.groups = groups
+
         }
         
         //  获取无限轮播的数据

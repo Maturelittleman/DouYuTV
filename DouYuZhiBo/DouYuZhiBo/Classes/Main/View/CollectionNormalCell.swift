@@ -43,6 +43,18 @@ extension CollectionNormalCell {
             make.width.equalTo(14)
             make.bottom.equalTo(-10)
         }
+
+        //  封面图
+        let iconImageV = UIImageView(image: UIImage(named: "Img_default"))
+        iconImageV.layer.cornerRadius = 8
+        iconImageV.layer.masksToBounds = true
+        self.addSubview(iconImageV)
+        self.iconImageV = iconImageV
+        iconImageV.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.bottom.equalTo(iconImg.snp.top).offset(-5)
+            make.top.equalTo(0)
+        }
         //  房间名
         let titleLabel = UILabel()
         self.addSubview(titleLabel)
@@ -53,19 +65,8 @@ extension CollectionNormalCell {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(iconImg.snp.right).offset(5)
             make.bottom.equalTo(iconImg)
-            make.width.equalToSuperview()
+            make.width.equalTo(iconImageV.snp.width).offset(-20)
             make.height.equalTo(iconImg)
-        }
-        //  图像
-        let iconImageV = UIImageView(image: UIImage(named: "Img_default"))
-        iconImageV.layer.cornerRadius = 8
-        iconImageV.layer.masksToBounds = true
-        self.addSubview(iconImageV)
-        self.iconImageV = iconImageV
-        iconImageV.snp.makeConstraints { (make) in
-            make.width.equalToSuperview()
-            make.bottom.equalTo(iconImg.snp.top).offset(-5)
-            make.top.equalTo(0)
         }
         //  主播名
         let nameLabel = UILabel()

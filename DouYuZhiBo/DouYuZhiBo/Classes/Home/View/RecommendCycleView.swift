@@ -12,8 +12,6 @@ fileprivate let kCycleCellID = "kCycleCellID"
 
 class RecommendCycleView: UIView {
     
-     var cycleTimer : Timer?
-    
     var cycleModels: [CycleModel]? {
         didSet {
             //  获取到数据刷新collectionview
@@ -30,6 +28,8 @@ class RecommendCycleView: UIView {
             addCycleTimer()
         }
     }
+    
+    fileprivate var cycleTimer : Timer?
     
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -119,7 +119,6 @@ extension RecommendCycleView: UICollectionViewDelegate {
         //开始拖动 停止定时器
         removeCycleTimer()
     }
-    
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //停止拖动 开启定时器
