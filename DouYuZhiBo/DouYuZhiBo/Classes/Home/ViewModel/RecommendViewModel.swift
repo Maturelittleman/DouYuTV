@@ -8,11 +8,9 @@
 
 import UIKit
 
-class RecommendViewModel {
+class RecommendViewModel: BaseViewModel {
     
     lazy var cycleArray: [CycleModel] = [CycleModel]()
-    
-    lazy var anchorGroup: [AnchorGroup] = [AnchorGroup]()
     
     lazy var bigDataArray: AnchorGroup = AnchorGroup()
 
@@ -77,14 +75,14 @@ extension RecommendViewModel {
                 //  字典转模型
                 let group = AnchorGroup(dict: dict)
                 //  添加到数组中
-                self.anchorGroup.append(group)
+                self.anchorGroups.append(group)
             }
             dGroup.leave()
         }
         
         dGroup.notify(queue: DispatchQueue.main) {
-            self.anchorGroup.insert(self.prettyDataArray, at: 0)
-            self.anchorGroup.insert(self.bigDataArray, at: 0)
+            self.anchorGroups.insert(self.prettyDataArray, at: 0)
+            self.anchorGroups.insert(self.bigDataArray, at: 0)
             
             finishCallBack()
         }

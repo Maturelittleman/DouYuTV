@@ -11,6 +11,7 @@
 		2725AC2E1DFD4FA200681145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC2D1DFD4FA200681145 /* AppDelegate.swift */; };
 		2725AC351DFD4FA200681145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725AC341DFD4FA200681145 /* Assets.xcassets */; };
 		2725AC4E1DFD4FA200681145 /* DouYuZhiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725AC4D1DFD4FA200681145 /* DouYuZhiBoUITests.swift */; };
+		272D0F4F1E21E8CF009FE33E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D0F4E1E21E8CF009FE33E /* GameViewController.swift */; };
 		2772D7361DFFC0BB00FB329E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772D7331DFFC0BB00FB329E /* MainViewController.swift */; };
 		2772D7411DFFC10F00FB329E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772D7401DFFC10F00FB329E /* HomeViewController.swift */; };
 		2772D7441DFFDBF300FB329E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772D7431DFFDBF300FB329E /* UIBarButtonItem-Extension.swift */; };
@@ -39,6 +40,9 @@
 		27F951951E17A9C6003078E5 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F951941E17A9C6003078E5 /* CollectionNormalCell.swift */; };
 		27F951971E17B4D3003078E5 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F951961E17B4D3003078E5 /* CollectionHeaderView.swift */; };
 		27F951991E17EEE5003078E5 /* NetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F951981E17EEE5003078E5 /* NetWorkingTool.swift */; };
+		27FFD9381E25D0AD007B9774 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFD9371E25D0AD007B9774 /* BaseViewController.swift */; };
+		27FFD93A1E25D32E007B9774 /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFD9391E25D32E007B9774 /* BaseAnchorViewController.swift */; };
+		27FFD93C1E25D6C8007B9774 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FFD93B1E25D6C8007B9774 /* BaseViewModel.swift */; };
 		2E48C543ECC1CDC9BCC1BBFC /* Pods_DouYuZhiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B1D74B214E9839B04A1109 /* Pods_DouYuZhiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,7 @@
 		2725AC491DFD4FA200681145 /* DouYuZhiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouYuZhiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725AC4D1DFD4FA200681145 /* DouYuZhiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouYuZhiBoUITests.swift; sourceTree = "<group>"; };
 		2725AC4F1DFD4FA200681145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272D0F4E1E21E8CF009FE33E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2772D7331DFFC0BB00FB329E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2772D7401DFFC10F00FB329E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2772D7431DFFDBF300FB329E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 		27F951941E17A9C6003078E5 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
 		27F951961E17B4D3003078E5 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		27F951981E17EEE5003078E5 /* NetWorkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkingTool.swift; sourceTree = "<group>"; };
+		27FFD9371E25D0AD007B9774 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		27FFD9391E25D32E007B9774 /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
+		27FFD93B1E25D6C8007B9774 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,7 @@
 		270831E21E1B83B00013FC70 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				27FFD93B1E25D6C8007B9774 /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -328,6 +337,8 @@
 			children = (
 				2772D7471E002A1100FB329E /* Main.storyboard */,
 				2772D7331DFFC0BB00FB329E /* MainViewController.swift */,
+				27FFD9371E25D0AD007B9774 /* BaseViewController.swift */,
+				27FFD9391E25D32E007B9774 /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 				2772D74F1E002AC500FB329E /* Home.storyboard */,
 				2772D7401DFFC10F00FB329E /* HomeViewController.swift */,
 				27EEFC101E17622100612F43 /* RecommendViewController.swift */,
+				272D0F4E1E21E8CF009FE33E /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -652,8 +664,10 @@
 			files = (
 				2793BAAA1E1CE0D700D98E92 /* RecommendCycleView.swift in Sources */,
 				2725AC2E1DFD4FA200681145 /* AppDelegate.swift in Sources */,
+				27FFD93A1E25D32E007B9774 /* BaseAnchorViewController.swift in Sources */,
 				2772D7361DFFC0BB00FB329E /* MainViewController.swift in Sources */,
 				27EEFC111E17622100612F43 /* RecommendViewController.swift in Sources */,
+				272D0F4F1E21E8CF009FE33E /* GameViewController.swift in Sources */,
 				27AC11CA1E01743F00EE6AE2 /* PageTitleView.swift in Sources */,
 				2793BAA41E1B970800D98E92 /* AnchorGroup.swift in Sources */,
 				27BFB9661E0265B200A3ADA6 /* PageContentView.swift in Sources */,
@@ -661,6 +675,7 @@
 				27A43F751E20B94C001AC2CD /* CycleModel.swift in Sources */,
 				27A43F781E20BF18001AC2CD /* CollectionViewCycleCell.swift in Sources */,
 				27AC11CC1E0177DD00EE6AE2 /* Common.swift in Sources */,
+				27FFD93C1E25D6C8007B9774 /* BaseViewModel.swift in Sources */,
 				27BFB9641E02650A00A3ADA6 /* UIColor-Extension.swift in Sources */,
 				27F951931E179383003078E5 /* CollectionPrettyFaceCell.swift in Sources */,
 				27A43F7B1E210A0D001AC2CD /* RecommendGameView.swift in Sources */,
@@ -669,6 +684,7 @@
 				2793BAA21E1B941100D98E92 /* NSDate-Extension.swift in Sources */,
 				2793BAA81E1CD1F700D98E92 /* CollectionBaseCell.swift in Sources */,
 				27F951971E17B4D3003078E5 /* CollectionHeaderView.swift in Sources */,
+				27FFD9381E25D0AD007B9774 /* BaseViewController.swift in Sources */,
 				27F951951E17A9C6003078E5 /* CollectionNormalCell.swift in Sources */,
 				2772D7411DFFC10F00FB329E /* HomeViewController.swift in Sources */,
 				270831E51E1B840E0013FC70 /* RecommendViewModel.swift in Sources */,
